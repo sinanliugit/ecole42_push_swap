@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 15:57:22 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 16:02:30 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -73,15 +85,15 @@ int					find_min_index(t_list *stack);
 void				push_min_to_b(t_list **astack, t_list **bstack);
 void				sort_4and5(t_list **astack, t_list **bstack);
 
-//radix_sort
-int		find_biggest_index(t_list **astack);
-int		count_bits(t_list **astack);
-void	radix_sort(t_list **astack, t_list **bstack);
+// radix_sort
+int					is_sorted(t_list *stack);
+int					find_biggest_index(t_list **astack);
+int					count_bits(t_list **astack);
+void				radix_sort(t_list **astack, t_list **bstack);
 
-//main
-int		is_sorted(t_list *stack);
-char	**parse(int ac, char **av);
-void	build_stack(t_list **stack, char **nbrs);
-void	sort_algo(t_list **astack, t_list **bstack);
+// main
+char				**parse(int ac, char **av);
+void				build_stack(t_list **stack, char **nbrs);
+void				sort_algo(t_list **astack, t_list **bstack);
 
 #endif

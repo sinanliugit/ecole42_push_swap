@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   assign_index.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:52:34 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 15:57:04 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// 5 functions
 int	count_nodes(t_list *stack)
 {
 	t_list	*tmp;
@@ -33,7 +44,10 @@ void	fill_tab(t_list *stack, int *tab)
 
 void	bubble_sort(int *tab, int count)
 {
-	int i, w, com;
+	int	i;
+	int	w;
+	int	com;
+
 	w = 0;
 	while (w < count)
 	{

@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lst.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:53:55 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 14:54:39 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// 4 functions
 t_list	*ft_lstnew(long data)
 {
 	t_list	*node;
@@ -12,20 +23,20 @@ t_list	*ft_lstnew(long data)
 	node->next = NULL;
 	return (node);
 }
-// listsize
+
 int	ft_lstsize(t_list *stack)
 {
-	size_t  count;
+	size_t	count;
 
 	count = 0;
-	while(stack)
+	while (stack)
 	{
 		count = count + 1;
 		stack = stack->next;
 	}
 	return (count);
 }
-// 新的node添加到第一个，need update 头指针
+
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
@@ -34,10 +45,9 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-//新的node添加到最后一个
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = *lst;
 	if (!lst || !new)

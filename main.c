@@ -1,24 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:55:56 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 14:55:58 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-//5functions
-//check if it's sorted
-int	is_sorted(t_list *stack)
-{
-	t_list	*tmp;
-
-	if (!stack)
-		return (1);
-	tmp = stack;
-	while (tmp->next)
-	{
-		if (tmp->data > tmp->next->data)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
-}
-
-//parsing
 char	**parse(int ac, char **av)
 {
 	char	**nbrs;
@@ -32,7 +25,6 @@ char	**parse(int ac, char **av)
 	return (nbrs);
 }
 
-//build stack
 void	build_stack(t_list **stack, char **nbrs)
 {
 	int		i;
@@ -52,7 +44,7 @@ void	build_stack(t_list **stack, char **nbrs)
 		i++;
 	}
 }
-//choose sort algo
+
 void	sort_algo(t_list **astack, t_list **bstack)
 {
 	int	size;
@@ -71,6 +63,26 @@ void	sort_algo(t_list **astack, t_list **bstack)
 		radix_sort(astack, bstack);
 }
 
+void	ft_freestack(t_list **astack, t_list **bstack)
+{
+	t_list	*tmp1;
+	t_list	*tmp2;
+
+	while (*astack)
+	{
+		tmp1 = (*astack)->next;
+		free(*astack);
+		*astack = tmp1;
+	}
+	*astack = NULL;
+	while (*bstack)
+	{
+		tmp2 = (*bstack)->next;
+		free(*bstack);
+		*bstack = tmp2;
+	}
+}
+
 // main
 int	main(int ac, char **av)
 {
@@ -85,9 +97,12 @@ int	main(int ac, char **av)
 	nbrs = parse(ac, av);
 	build_stack(&astack, nbrs);
 	if (is_sorted(astack))
+	{
+		ft_freestack(&astack, &bstack);
 		return (0);
+	}
 	assign_index(astack);
 	sort_algo(&astack, &bstack);
+	ft_freestack(&astack, &bstack);
 	return (0);
 }
-

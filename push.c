@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:56:32 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 16:03:42 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
 //取出源栈顶元素；插入目标栈顶；更新链表指针
-//3 functions
-void	push(t_list	**src,	t_list	**dest)
+void	push(t_list **src, t_list **dest)
 {
 	t_list	*tmp;
+
 	if (!src || !*src)
 		return ;
 	tmp = *src;
@@ -11,21 +24,20 @@ void	push(t_list	**src,	t_list	**dest)
 	ft_lstadd_front(dest, tmp);
 }
 
-//push from a to b
-void	pb(t_list	**astack,	t_list	**bstack)
+// push from a to b
+void	pb(t_list **astack, t_list **bstack)
 {
 	push(astack, bstack);
 	write(1, "pb\n", 3);
 }
 
-//push from b to a
-void	pa(t_list	**astack,	t_list **bstack)
+// push from b to a
+void	pa(t_list **astack, t_list **bstack)
 {
 	push(bstack, astack);
-	write(1, "pa\n",3);
+	write(1, "pa\n", 3);
 }
 
-// delete aide printf function
 // void	print_stack(t_list *stack)
 // {
 // 	while (stack)
@@ -36,12 +48,11 @@ void	pa(t_list	**astack,	t_list **bstack)
 // 	printf("NULL\n");
 // }
 
-// delete test main
-// int		main()
+// int		main(void)
 // {
 // 	t_list	*astack = NULL;
 // 	t_list	*bstack = NULL;
-	
+
 // 	astack = ft_lstnew(0);
 // 	ft_lstadd_back(&astack, ft_lstnew(1));
 // 	ft_lstadd_back(&astack, ft_lstnew(2));

@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:58:16 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 16:04:24 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-//记录栈顶；链接尾部；更新头指针
-// 4 functions
+//记录栈顶；链接尾部；更新头指针;
 void	rotate(t_list **stack)
 {
 	t_list	*tmp;
@@ -37,7 +48,6 @@ void	rr(t_list **astack, t_list **bstack)
 	write(1, "rr\n", 3);
 }
 
-// delete aide printf function
 // void	print_stack(t_list *stack)
 // {
 // 	while (stack)
@@ -48,7 +58,6 @@ void	rr(t_list **astack, t_list **bstack)
 // 	printf("NULL\n");
 // }
 
-// delete test main
 // int		main(void)
 // {
 // 	t_list	*astack = NULL;

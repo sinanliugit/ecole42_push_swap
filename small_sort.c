@@ -1,8 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:58:46 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 16:04:33 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// 5 functions
-
-// sort_2, sa
 void	sort_2(t_list **astack)
 {
 	if (!astack || !(*astack) || !(*astack)->next)
@@ -11,7 +20,6 @@ void	sort_2(t_list **astack)
 		sa(astack);
 }
 
-// sort_3, handle 3
 void	sort_3(t_list **astack)
 {
 	long	top;
@@ -40,7 +48,8 @@ void	sort_3(t_list **astack)
 }
 
 // common fucntion for sort_4 and sort_5,find min_val and push to stack b
-// min_index is the index of the nb after sorting, i is the index of the number;
+// min_index is the index of the nb after sorting
+// i is the index of the number;
 int	find_min_index(t_list *stack)
 {
 	t_list	*tmp;
@@ -65,7 +74,8 @@ int	find_min_index(t_list *stack)
 	return (min_index);
 }
 
-// according to the position find the easiest way，rotate min_index times to the top;
+// according to the position find the easiest way，
+// rotate min_index times to the top;
 void	push_min_to_b(t_list **astack, t_list **bstack)
 {
 	int	min_index;
@@ -114,6 +124,7 @@ void	sort_4and5(t_list **astack, t_list **bstack)
 		pa(astack, bstack);
 	}
 }
+
 /*
 int	main(void)
 {

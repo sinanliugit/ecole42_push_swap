@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:54:59 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 15:33:54 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// 5 functions
 int	count_words(const char *s, char c)
 {
 	int	inword;
@@ -84,11 +95,10 @@ char	**ft_split(char const *s, char c)
 		len = 0;
 		while (s[i] && s[i] == c)
 			i++;
-		while (s[i] && s[i] != c)
-		{
-			i++;
-			len++;
-		}
+		if (s[i] == '\0')
+			break ;
+		while (s[i] && s[i] != c && ++len && ++i)
+			;
 		tab[q] = fill_word(s, len, i - len);
 		if (!tab[q])
 			return (ft_free(tab, q));

@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:57:53 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 16:04:12 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 //遍历到倒数第二个元素；更新next指针让尾部元素变栈顶
-// need two pointers , one change , one point to null
-// 4 functions
+// need two pointers , one change , one point to null;
 void	reverse_rotate(t_list **stack)
 {
 	t_list	*last;
@@ -41,7 +52,6 @@ void	rrr(t_list **astack, t_list **bstack)
 	write(1, "rrr\n", 4);
 }
 
-// delete aide printf function
 // void	print_stack(t_list *stack)
 // {
 // 	while (stack)
@@ -52,7 +62,6 @@ void	rrr(t_list **astack, t_list **bstack)
 // 	printf("NULL\n");
 // }
 
-// delete test main
 // int		main(void)
 // {
 // 	t_list	*astack = NULL;

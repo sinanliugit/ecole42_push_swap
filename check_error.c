@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_error.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:53:12 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 14:53:17 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// 5 functions
 int	ft_isdigit(int c)
 {
 	if (!(c >= '0' && c <= '9'))
@@ -56,7 +67,8 @@ int	has_dup(t_list *stack, int data)
 // exit 1: exit a false value;
 void	error_exit(t_list **stack)
 {
-	t_list *tmp;
+	t_list	*tmp;
+
 	while (*stack)
 	{
 		tmp = (*stack)->next;

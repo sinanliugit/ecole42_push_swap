@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:59:39 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 16:04:54 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 // swap top two of stack a
-// 4 functions
+// the first next to the third
+// the second next to the first
+// update the head
 void	swap(t_list **stack)
 {
 	t_list	*first;
@@ -11,9 +25,6 @@ void	swap(t_list **stack)
 		return ;
 	first = *stack;
 	second = (*stack)->next;
-	// the first next to the third
-	// the second next to the first
-	// update the head
 	first->next = second->next;
 	second->next = first;
 	*stack = second;
@@ -39,7 +50,6 @@ void	ss(t_list **astack, t_list **bstack)
 	write(1, "ss\n", 3);
 }
 
-// delete aide printf function
 // void	print_stack(t_list *stack)
 // {
 // 	while (stack)
@@ -49,7 +59,7 @@ void	ss(t_list **astack, t_list **bstack)
 // 	}
 // 	printf("NULL\n");
 // }
-// delete test main
+
 // int		main(void)
 // {
 // 	t_list	*astack = NULL;

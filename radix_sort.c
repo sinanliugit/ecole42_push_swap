@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siliu <siliu@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/19 14:57:12 by siliu             #+#    #+#             */
+/*   Updated: 2026/03/19 16:04:04 by siliu            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-//look for max_bits
-//if bit == 0 -> pb; else -> ra (the end of the stack)
-//find the biggest index, that's the max time to iterate
+// look for max_bits
+// if bit == 0 -> pb; else -> ra (the end of the stack)
+// find the biggest index, that's the max time to iterate
 
-int		find_biggest_index(t_list **astack)
+int	find_biggest_index(t_list **astack)
 {
 	int		max;
 	t_list	*tmp;
@@ -16,14 +28,14 @@ int		find_biggest_index(t_list **astack)
 		if (tmp->index > max)
 			max = tmp->index;
 		tmp = tmp->next;
-	}	
+	}
 	return (max);
 }
 
-int		count_bits(t_list **astack)
+int	count_bits(t_list **astack)
 {
-	int		count;
-	int		biggest_index;
+	int	count;
+	int	biggest_index;
 
 	count = 0;
 	biggest_index = find_biggest_index(astack);
@@ -31,13 +43,32 @@ int		count_bits(t_list **astack)
 		count++;
 	return (count);
 }
-//no need to move pointer, cause ra,pb is already moving ,just see the head pointer
+
+// no need to mo//check if it's sorted
+int	is_sorted(t_list *stack)
+{
+	t_list	*tmp;
+
+	if (!stack)
+		return (1);
+	tmp = stack;
+	while (tmp->next)
+	{
+		if (tmp->data > tmp->next->data)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
+
+// no need iterate pointer,cause ra,pb is already moving 
+// just see the head pointer
 void	radix_sort(t_list **astack, t_list **bstack)
 {
-	int		count;
-	int		i;
-	int		w;
-	int		size;
+	int	count;
+	int	i;
+	int	w;
+	int	size;
 
 	i = 0;
 	count = count_bits(astack);
@@ -59,7 +90,6 @@ void	radix_sort(t_list **astack, t_list **bstack)
 	}
 }
 
-// delete aide printf function
 // void	print_stack(t_list *stack)
 // {
 // 	while (stack)
@@ -70,7 +100,6 @@ void	radix_sort(t_list **astack, t_list **bstack)
 // 	printf("NULL\n");
 // }
 
-// delete test main
 // int		main(void)
 // {
 // 	t_list	*astack = NULL;
@@ -88,4 +117,3 @@ void	radix_sort(t_list **astack, t_list **bstack)
 //	print_stack (astack);
 //	print_stack (bstack);
 // }
-
