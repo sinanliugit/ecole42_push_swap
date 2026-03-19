@@ -43,9 +43,6 @@ char				**ft_free(char **tab, int number);
 char				**do_malloc(char const *s, char c);
 char				**ft_split(char const *s, char c);
 
-// parsing
-int					is_sorted(t_list *stack);
-
 // push
 void				push(t_list **src, t_list **dest);
 void				pb(t_list **astack, t_list **bstack);
@@ -75,5 +72,16 @@ void				sort_3(t_list **astack);
 int					find_min_index(t_list *stack);
 void				push_min_to_b(t_list **astack, t_list **bstack);
 void				sort_4and5(t_list **astack, t_list **bstack);
+
+//radix_sort
+int		find_biggest_index(t_list **astack);
+int		count_bits(t_list **astack);
+void	radix_sort(t_list **astack, t_list **bstack);
+
+//main
+int		is_sorted(t_list *stack);
+char	**parse(int ac, char **av);
+void	build_stack(t_list **stack, char **nbrs);
+void	sort_algo(t_list **astack, t_list **bstack);
 
 #endif

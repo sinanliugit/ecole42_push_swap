@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
 // 5 functions
-static int	count_words(const char *s, char c)
+int	count_words(const char *s, char c)
 {
 	int	inword;
 	int	i;
@@ -25,7 +25,7 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
-static char	*fill_word(const char *s, int len, int start)
+char	*fill_word(const char *s, int len, int start)
 {
 	char	*word;
 	int		i;
@@ -42,7 +42,7 @@ static char	*fill_word(const char *s, int len, int start)
 	return (word);
 }
 
-static char	**ft_free(char **tab, int number)
+char	**ft_free(char **tab, int number)
 {
 	int	i;
 
